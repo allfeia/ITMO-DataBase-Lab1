@@ -29,8 +29,10 @@ INSERT INTO place(description) values
 INSERT INTO observation(change_color, field_of_view, time, place_id) values
 ('оранжевая', '-', '2022-08-15 14:30:00', '1'),
 ('тускло-серая', 'кажется слабенькой звёздочкой', '2022-08-29 14:38:00', '1');
+-- Insert data into table action
+INSERT INTO action(description, observation_id) values
+('происходит нечто ужасное', 2);
 
-//TODO: заполнить таблицу action
 
 
 
