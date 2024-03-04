@@ -23,7 +23,7 @@ place_id int NOT NULL REFERENCES place(id));
 CREATE TABLE action(
 id serial PRIMARY KEY,
 description text NOT NULL,
-observation_id int REFERENCES observation(id));
+observation_id int REFERENCES observation(id)) UNIQUE; //
 
 -- Insert data into table planet
 INSERT INTO planet(name) values
