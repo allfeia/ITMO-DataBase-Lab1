@@ -1,12 +1,12 @@
 -- Clear
-DROP TABLE IF EXISTS planet CASCADE;
+DROP TABLE IF EXISTS planet CASCADE; //каскадное удаление, которое удаляет и зависящие строки
 DROP TABLE IF EXISTS place CASCADE;
 DROP TABLE IF EXISTS action CASCADE;
 DROP TABLE IF EXISTS observation CASCADE;
 
 -- Creation Data Base
 CREATE TABLE planet(
-id serial PRIMARY KEY,
+id serial PRIMARY KEY, //первичный ключ
 name varchar(64));
 
 CREATE TABLE place(
@@ -17,13 +17,13 @@ CREATE TABLE observation(
 id serial PRIMARY KEY,
 change_color varchar(64),
 field_of_view text NOT NULL,
-time timestamp NOT NULL,
-place_id int NOT NULL REFERENCES place(id));
+time timestamp NOT NULL, //timestamp - тип данных даты/времени (без часового пояса)
+place_id int NOT NULL REFERENCES place(id)); //внешний ключ
 
 CREATE TABLE action(
-id serial PRIMARY KEY,
+id serial PRIMARY KEY, //serial - псевдотип, который создёт последовательность и связывает атрибут со значением этой последовательности
 description text NOT NULL,
-observation_id int REFERENCES observation(id)) UNIQUE; //
+observation_id int REFERENCES observation(id)) UNIQUE; //UNIQUE - ограничение для уникальности
 
 -- Insert data into table planet
 INSERT INTO planet(name) values
