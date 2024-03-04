@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS observation CASCADE;
 
 -- Creation Data Base
 CREATE TABLE planet(
-id serial PRIMARY KEY, //первичный ключ
+id serial PRIMARY KEY, //первичный ключ - уникальный идентификатор поля таблицы
 name varchar(64));
 
 CREATE TABLE place(
@@ -18,7 +18,7 @@ id serial PRIMARY KEY,
 change_color varchar(64),
 field_of_view text NOT NULL,
 time timestamp NOT NULL, //timestamp - тип данных даты/времени (без часового пояса)
-place_id int NOT NULL REFERENCES place(id)); //внешний ключ
+place_id int NOT NULL REFERENCES place(id)); //внешний ключ - ссылка
 
 CREATE TABLE action(
 id serial PRIMARY KEY, //serial - псевдотип, который создёт последовательность и связывает атрибут со значением этой последовательности
