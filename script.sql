@@ -1,3 +1,9 @@
+-- Clear
+DROP TABLE IF EXISTS planet CASCADE;
+DROP TABLE IF EXISTS place CASCADE;
+DROP TABLE IF EXISTS action CASCADE;
+DROP TABLE IF EXISTS observation CASCADE;
+
 -- Creation Data Base
 CREATE TABLE planet(
 id serial PRIMARY KEY,
