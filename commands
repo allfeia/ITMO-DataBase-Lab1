@@ -17,7 +17,12 @@ WHERE имя_поля IN (SELECT DISTINCT имя_поля FROM имя_поля W
 SLECT * FROM имя_таблицы WHERE имя_поля LIKE 'примерное_значение'; //поиск по маске 
 
 SELECT nextval('action_id_seq'); //вывод следующего значения последовательности
+
 SELECT * FROM observation WHERE EXTRACT(MONTH FROM time) = 06; //вывод всех наблюдений в июне
+
+SELECT EXTRACT(MONTH FROM time) AS month, COUNT(id) AS count_id //вывод количества наблюдений по месяцам
+FROM observation
+GROUP BY EXTRACT(MONTH FROM time); 
 
 ALTER TABLE имя_таблицы RENAME COLUMN имя_поля TO новое_имя_поля; //изменение имени поля
 
