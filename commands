@@ -16,7 +16,7 @@ WHERE имя_поля IN (SELECT DISTINCT имя_поля FROM имя_поля W
 
 SLECT * FROM имя_таблицы WHERE имя_поля LIKE 'примерное_значение'; //поиск по маске 
 
-
+SELECT nextval('action_id_seq'); //вывод следующего значения последовательности
 
 ALTER TABLE имя_таблицы RENAME COLUMN имя_поля TO новое_имя_поля; //изменение имени поля
 
